@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="form-content">
+        <div class="logo-content">
+            <h1>Login</h1>
+            <img src="./sesi-logo.png" alt="">
+        </div>
+        <form action="./login.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Insira seu email" required autofocus>
+            <br>
+            <label for="pass">Senha:</label>
+            <input type="password" name="pass" id="pass" placeholder="Insira sua senha" required>
+            <br>
+            <input type="submit" value="Enviar">
+            <p>Ainda não tem um login? <a href="./cadastro.html">Fazer cadastro</a></p>
+        </form>
+    </div>
+</body>
+</html>
