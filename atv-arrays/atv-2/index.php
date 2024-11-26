@@ -1,4 +1,5 @@
 <?php
+    //Exercicio 01
     echo "<h1>1. </h1>";
 
     $produto = array(
@@ -11,6 +12,7 @@
         echo "Nome: " . $item['nome']. " | Preço: " . $item['preco'] . "<br>";
     }
 
+    //Exercicio 02
     echo "<h1>2. </h1>";
 
     foreach($produto as $item){
@@ -18,6 +20,7 @@
         echo "Valor total em estoque do " . $item['nome'] . ": $valor <br>";
     }
 
+    //Exercicio 03
     echo "<h1>3. </h1>";
 
     $alunos = array(
