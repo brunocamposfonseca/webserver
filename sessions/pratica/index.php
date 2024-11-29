@@ -16,6 +16,12 @@
             <br>
             <input type="submit" value="Enviar">
         </form>
+        <?php
+            session_start();
+            if((isset($_SESSION["login"]) and isset($_SESSION["senha"])) or (isset($_COOKIE["login"]) and isset($_COOKIE["senha"]))){
+                header('location: dashboard.php');
+            }
+        ?>
     </div>
 </body>
 </html>
