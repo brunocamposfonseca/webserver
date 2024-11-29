@@ -25,11 +25,11 @@
 
     $alunos = array(
         array("nome" => "Bruno", "notas" => 
-            array("matematica" => 9, "ingles" => 7, "portugues" => 5)),
+            array("matematica" => 9, "ingles" => 8, "portugues" => 10)),
         array("nome" => "Matheus", "notas" => 
             array("matematica" => 9, "ingles" => 6, "portugues" => 8)),
         array("nome" => "Gustavo", "notas" => 
-            array("matematica" => 8, "ingles" => 3, "portugues" => 1)),
+            array("matematica" => 8, "ingles" => 3, "portugues" => 8)),
     );
 
     foreach($alunos as $aluno){
