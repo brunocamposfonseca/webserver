@@ -21,6 +21,11 @@
         <?php
             session_start();
             if((isset($_SESSION["login"]) and isset($_SESSION["senha"])) or (isset($_COOKIE["login"]) and isset($_COOKIE["senha"]))){
+                if(!isset($_SESSION["login"])){
+                    $_SESSION["login"] = $_COOKIE["login"];
+                    $_SESSION["senha"] = $_COOKIE["senha"];
+                    header('location: dashboard.php');
+                }
                 header('location: dashboard.php');
             }
         ?>
