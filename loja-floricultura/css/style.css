@@ -1,0 +1,156 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerx{
+    border-radius: 10px;
+    width: 400px;
+    padding: 40px;
+    margin: auto;
+    text-align: center;
+   
+}
+
+form{
+    text-align: start;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"]{
+    display: block;
+    margin-block: 10px 20px;
+    border: none;
+    padding: 15px;
+    width: calc(100% - 35px);
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    border: 3px transparent solid;
+    transition: all 0.3s;
+
+}
+
+
+input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="number"]:not(:placeholder-shown),  input[type="email"]:not(:placeholder-shown){
+    background-color: #fff;
+    border: 3px #00000030 solid;
+}
+
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus{
+    border: 3px black solid;
+    outline: none;
+    background-color: #fff;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+input[type="submit"]:hover{
+    background-color: #292929;
+}
+
+.logo-content{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 120px; 
+    height: auto;
+    display: inline;
+}
+
+h1{
+    font-weight: 600;
+    margin-block: 20px;
+    display: inline;
+}
+
+p{
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+a > button{
+    font-style: italic;
+    color: gray;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.container-vendedor{
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    position: relative;
+}
+
+.group-vendedor{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.content{
+    max-width: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-group{
+    border-top: 3px solid rgb(141, 141, 141);
+    padding-top: 50px;
+    align-items: baseline;
+}
+
+table{
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 1px solid hsla(0, 0%, 50.2%, .5019607843);
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+
+tr{
+    font-size: .9em;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: black;
+    color: #fff;
+}
+
+th, td{
+    padding: 15px;
+    line-height: 1.5;
+    vertical-align: top;
+    border: 2px solid hsla(0, 0%, 50.2%, .5019607843);
+}
