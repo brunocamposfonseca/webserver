@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['email']) and !isset($_SESSION['senha'])){
+        header('location: index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

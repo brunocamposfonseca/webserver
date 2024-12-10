@@ -28,7 +28,6 @@
             ?>
         </form>
         <?php
-           
             if((isset($_SESSION["email?"]) and isset($_SESSION["senha"])) or (isset($_COOKIE["email"]) and isset($_COOKIE["senha"]))){
                 if(!isset($_SESSION["email"])){
                     $_SESSION["email"] = $_COOKIE["email"];
