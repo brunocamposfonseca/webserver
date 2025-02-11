@@ -144,10 +144,12 @@ class ContaBancaria{
     public $saldo;
     
     public function sacar($num){
+        $this->saldo += $num;
         return 'sacou R$' . $num;
     }
 
     public function depositar($num){
+        $this->saldo -= $num;
         return 'depositou R$' . $num;
     }
 }
