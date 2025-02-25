@@ -1,11 +1,11 @@
 <?php
     $db = new PDO("mysql:host=localhost;dbname=pdo", "root", "");
 
-    // var_dump($db);
-    // echo "<br><br>";
-    // print_r($db);
+    var_dump($db);
+    echo "<br><br>";
+    print_r($db);
 
-    // echo "<br><br>";
+    echo "<br><br>";
 
     echo "<h1>Exemplo de consulta de 1 linha</h1>";
     $dados = $db->query("SELECT * FROM clientes");
