@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
     <title>Register</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#" class="meumenu" title="Home">Home</a></li>
-            <li><a href="client.php" class="meumenu" title="Clients">Clients</a></li>
-            <li><a href="#" class="meumenu" title="Products">Products</a></li>
-            <li><a href="#" class="meumenu" title="Sales">Sales</a></li>
-        </ul>
-    </nav>
+    <?php include_once "./components/navbar.php"?>
     <section class="dashboard">
         <div class="dash-info">
             <h1>Dashboard</h1>

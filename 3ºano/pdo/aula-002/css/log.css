@@ -1,22 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-html, 
-body{
-    width: 100%;
-    height: 100%;
-}
-
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 form{
     display: flex;
     flex-direction: column;
@@ -33,7 +14,8 @@ form{
     width: 100%;
   }
   
-  .input-fields input{
+  .input-fields input,
+  .input-fields textarea{
     width: 100%;
     max-width: 100%;
     min-width: 100%;
@@ -46,27 +28,30 @@ form{
     padding: 12px 12px;
     font-size: 14px;
     background-color: #f0f0f0;
+    transition: all 0.3s ease;
   }
   
-  .input-fields input:focus{
+  .input-fields input:focus,
+  .input-fields textarea:focus{
     outline: 2px solid #1f3040;
   }
   
-  .input-fields input:focus + label{
+  .input-fields input:focus + label,
+  .input-fields textarea:focus + label{
     top: -10px;
     color: #1f3040;
     font-weight: 600;
-    outline: 2px solid #1f3040;
   }
   
-  .input-fields input:not(:placeholder-shown) + label{
+  .input-fields input:not(:placeholder-shown) + label,
+  .input-fields textarea:not(:placeholder-shown) + label{
     top: -10px;
     color: #1f3040;
     font-weight: 600;
-    outline: 2px solid #1f3040;
   }
 
-  .input-fields input:not(:placeholder-shown){
+  .input-fields input:not(:placeholder-shown),
+  .input-fields textarea:not(:placeholder-shown){
     outline: 2px solid #1f3040;
   }
   
@@ -117,8 +102,6 @@ button[type = "submit"]:hover{
 a{
     display: block;
 }
-
-
 
 button{
     padding: 15px 30px;
