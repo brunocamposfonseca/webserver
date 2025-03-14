@@ -33,32 +33,10 @@
                 ?>
             </div>
             <div class="card-dashboard">
-            <p>Teachers</p>
+                <p>Number of registered products:</p>
                 <?php
                     include "conn.php";
-                    $query = $db->query("SELECT * from clientes WHERE observacao LIKE 'Professor%'");
-                    $query->execute();
-                    $data = $query->rowCount();
-                    
-                    echo "<span>".$data."</span>";
-                ?>
-            </div>
-            <div class="card-dashboard">
-            <p>Students - Multimidia</p>
-                <?php
-                    include "conn.php";
-                    $query = $db->query("SELECT * from clientes WHERE observacao = 'Aluno - Multimidia'");
-                    $query->execute();
-                    $data = $query->rowCount();
-                    
-                    echo "<span>".$data."</span>";
-                ?>
-            </div>
-            <div class="card-dashboard">
-            <p>Students - Desenvolvimento de Sistemas: </p>
-                <?php
-                    include "conn.php";
-                    $query = $db->query("SELECT * from clientes WHERE observacao = 'Aluno - Desenvolvimento de Sistemas'");
+                    $query = $db->query("SELECT * from produtos");
                     $query->execute();
                     $data = $query->rowCount();
                     

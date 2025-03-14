@@ -30,7 +30,7 @@ li .meumenu {
     color: #4c4c4c;
     border: 0 1px 0 0 #4c4c4c;
     border-bottom: 2px solid transparent;
-    transition: border-bottom .3s linear;
+    transition: all 0.3s ease;
 }
 
 li .meumenu:hover {
@@ -42,6 +42,17 @@ li .active-url{
     font-weight: 600;
     font-style: italic;
     border-bottom: 2px solid #3535dc;
+    transition: all 0.3s ease;
+}
+
+li .active-url:hover{
+    color: #21219a;
+    border-bottom: 2px solid #21219a;
+}
+
+li > a{
+    display: flex;
+    gap: 5px;
 }
 
 /* TABLE */
@@ -59,6 +70,10 @@ td {
     padding: 8px;
     min-width: 80px;
     max-width: 300px;
+    border: 1px solid #a9a9a9;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: wrap;
 }
 
 tr:nth-child(even) {
@@ -74,10 +89,6 @@ tr:hover{
 th {
     background-color: #3535dc;
     color: white;
-}
-
-td, th{
-    border: 1px solid #a9a9a9;
 }
 
 .fa{

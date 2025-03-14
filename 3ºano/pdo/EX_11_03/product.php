@@ -8,29 +8,31 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
-    <title>Register</title>
+    <title>Product - Dashboard</title>
 </head>
 <body>
     <?php 
-        
-        
         include_once "./assets/components/navbar.php"
     ?>
     <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
     <p class="wrapper observation-wrapper" id="observation-wrapper"></p>
-    <form action="insert.php" method="post" name="form" onsubmit="return validarDadosCliente()">
-        <h1>Register</h1>
+    <form action="insertProducts.php" method="post" name="form" onsubmit="return validarDadosProduto(event), barCodeVal()">
+        <h1>Register Product</h1>
         <div class="input-fields">
-            <input type="name" name="name" id="name" placeholder="" autofocus>
-            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="" autofocus>
+            <label for="name">Product name</label>
         </div>
         <div class="input-fields">
-            <input type="email" name="email" id="email" placeholder=""></input>
-            <label for="email">Email</label>
+            <input type="number" name="code" id="code" placeholder=""></input>
+            <label for="code">Product code</label>
         </div>
         <div class="input-fields">
-            <textarea name="obs" id="obs" rows="4" placeholder=""></textarea>
-            <label for="obs">Observation</label>
+            <input type="number" name="stock" id="stock" placeholder="">
+            <label for="stock">Stock</label>
+        </div>
+        <div class="input-fields">
+            <input type="text" step="0.01" name="price" id="price" placeholder="">
+            <label for="price">Price</label>
         </div>
         <?php 
             session_start();
@@ -44,7 +46,7 @@
     </form>
     <div class="table-clientes" style="padding-block: 30px; display: flex; flex-direction: column; align-items: center; gap: 30px;">
         <h1>Customer Registration</h1>
-        <?php include "./assets/components/tableClients.php"?>
+        <?php include "assets/components/tableProducts.php"?>
     </div>
 </body>
 <script src="./assets/js/script.js"></script>

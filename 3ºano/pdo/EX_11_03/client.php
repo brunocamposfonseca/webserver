@@ -8,20 +8,18 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
-    <title>Register</title>
+    <title>Register - Dashboard</title>
 </head>
 <body>
     <?php 
-        
-        
         include_once "./assets/components/navbar.php"
     ?>
     <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
     <p class="wrapper observation-wrapper" id="observation-wrapper"></p>
-    <form action="insert.php" method="post" name="form" onsubmit="return validarDadosCliente()">
-        <h1>Register</h1>
+    <form action="insertClient.php" method="post" name="form" onsubmit="return validarDadosCliente()">
+        <h1>Register Client</h1>
         <div class="input-fields">
-            <input type="name" name="name" id="name" placeholder="" autofocus>
+            <input type="text" name="name" id="name" placeholder="" autofocus>
             <label for="name">Name</label>
         </div>
         <div class="input-fields">
@@ -32,7 +30,7 @@
             <textarea name="obs" id="obs" rows="4" placeholder=""></textarea>
             <label for="obs">Observation</label>
         </div>
-        <?php 
+        <?php
             session_start();
             if(isset($_SESSION['erro'])){
                 $erro = $_SESSION['erro'];
