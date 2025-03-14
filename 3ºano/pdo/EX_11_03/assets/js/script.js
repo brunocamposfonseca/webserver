@@ -76,48 +76,76 @@ function validarDadosProduto(event) {
     form.stock.style.outline = "";
     form.price.style.outline = "";
 
+    // Limpar o valor de preço
     let valorFormatado = form.price.value;
     form.price.value = limparValorEnviado(valorFormatado);
-    console.log("Valor limpo para envio:", valorLimpo);
 
+    // Validação do nome
     if (form.name.value.length < 3 || form.name.value == "") {
         var alert = document.getElementById("alert-wrapper");
-        form.name.focus()
+        form.name.focus();
         alert.innerHTML = "Fill in the name field correctly.\nCheck if the name has more than 3 characters.";
         alert.classList.add("open");
         setTimeout(() => {
-            alert.classList.remove("open")
-        }, 5000)
+            alert.classList.remove("open");
+        }, 5000);
         form.name.style.outline = "2px solid red";
-
         return false;
     }
 
-    if (form.code.value.length < 13 || form.code.value == "" || typeof(form.code.value) != number) {
+    // Validação do código de barras
+    let codeNum = form.code.value;
+    let codeBar = [];
+    let soma = 0; // Inicializando a soma
+
+    if (codeNum.length !== 13 || isNaN(codeNum)) {
         var alert = document.getElementById("alert-wrapper");
-        form.name.focus()
-        alert.innerHTML = "Fill in the product code field correctly.\nCheck if the code has more than 4 characters and if its content contains only numbers.";
+        form.code.focus();
+        alert.innerHTML = "Invalid barcode! Make sure it has 13 digits and only contains numbers.";
         alert.classList.add("open");
         setTimeout(() => {
-            alert.classList.remove("open")
-        }, 5000)
+            alert.classList.remove("open");
+        }, 5000);
         form.code.style.outline = "2px solid red";
-
         return false;
+    } else {
+        for (let i = 0; i < 13; i++) {
+            let newIndex = Number(codeNum[i]);
+            if (i % 2 == 0) {
+                codeBar.push(newIndex);
+            } else {
+                codeBar.push(newIndex * 3);
+            }
+            soma += codeBar[i];
+        }
+
+        if (soma % 10 !== 0) {
+            var alert = document.getElementById("alert-wrapper");
+            alert.innerHTML = "Invalid barcode!";
+            alert.classList.add("open");
+            setTimeout(() => {
+                alert.classList.remove("open");
+            }, 5000);
+            form.code.style.outline = "2px solid red";
+            return false;
+        }
+
+        return true;
     }
 
-    if (form.stock.value == "" || typeof(form.stock.value) != number) {
+    // Validação do estoque
+    if (form.stock.value == "" || isNaN(form.stock.value)) {
         var alert = document.getElementById("alert-wrapper");
-        form.name.focus()
-        alert.innerHTML = "Fill in the product code field correctly.\nCheck if its content contains only numbers.";
+        form.stock.focus();
+        alert.innerHTML = "Fill in the product stock field correctly.\nCheck if its content contains only numbers.";
         alert.classList.add("open");
         setTimeout(() => {
-            alert.classList.remove("open")
-        }, 5000)
+            alert.classList.remove("open");
+        }, 5000);
         form.stock.style.outline = "2px solid red";
-
         return false;
     }
 
+    // Impedindo o envio do formulário
     event.preventDefault();
 }

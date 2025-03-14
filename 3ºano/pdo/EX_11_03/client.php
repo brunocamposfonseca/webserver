@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
-    <title>Register - Dashboard</title>
+    <title>Client - Dashboard</title>
 </head>
 <body>
     <?php 
@@ -30,6 +30,7 @@
             <textarea name="obs" id="obs" rows="4" placeholder=""></textarea>
             <label for="obs">Observation</label>
         </div>
+
         <?php
             session_start();
             if(isset($_SESSION['erro'])){

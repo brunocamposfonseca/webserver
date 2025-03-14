@@ -16,14 +16,14 @@
     ?>
     <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
     <p class="wrapper observation-wrapper" id="observation-wrapper"></p>
-    <form action="insertProducts.php" method="post" name="form" onsubmit="return validarDadosProduto(event), barCodeVal()">
+    <form action="insertProducts.php" method="post" name="form" onsubmit="return validarDadosProduto(event)">
         <h1>Register Product</h1>
         <div class="input-fields">
             <input type="text" name="name" id="name" placeholder="" autofocus>
             <label for="name">Product name</label>
         </div>
         <div class="input-fields">
-            <input type="number" name="code" id="code" placeholder=""></input>
+            <input type="number" name="code" id="code" placeholder="" ></input>
             <label for="code">Product code</label>
         </div>
         <div class="input-fields">
