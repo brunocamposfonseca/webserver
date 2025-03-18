@@ -18,14 +18,23 @@ body{
   gap: 20px;
 }
 
-.wrapper{
-  opacity: 0;
+.ul-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   position: fixed;
   z-index: 10;
   top: 100px;
   left: 50%;
-  transform: translate(-50%, -10%);
+  transform: translate(-50%, 0%);
   max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease;
+  height: auto;
+}
+
+.wrapper{
+  display: none;
   width: 100%;
   padding: 10px;
   background-color: #ffc5c5;
@@ -36,6 +45,5 @@ body{
 }
 
 .wrapper.open{
-  opacity: 1;
-  transform: translate(-50%, 0%);
+  display: block;
 }

@@ -18,7 +18,8 @@ form {
 }
 
 .input-fields input,
-.input-fields textarea {
+.input-fields textarea,
+.input-fields select {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
@@ -35,7 +36,8 @@ form {
 }
 
 .input-fields input:focus,
-.input-fields textarea:focus {
+.input-fields textarea:focus,
+.input-fields select:focus {
   outline: 1px solid #1f3040;
 }
 
@@ -54,7 +56,8 @@ form {
 }
 
 .input-fields input:not(:placeholder-shown),
-.input-fields textarea:not(:placeholder-shown) {
+.input-fields textarea:not(:placeholder-shown),
+.input-fields select:not(:placeholder-shown) {
   outline: 1px solid #1f3040;
 }
 

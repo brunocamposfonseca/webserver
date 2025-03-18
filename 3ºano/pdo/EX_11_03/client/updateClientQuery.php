@@ -1,5 +1,5 @@
 <?php
-include "conn.php";
+include "../conn.php";
 $id = $_GET["id"];
 $newName = $_POST["name"];
 $newEmail = $_POST["email"];
@@ -12,4 +12,4 @@ $dados->bindParam(":nome", $newName);
 $dados->bindParam(":email", $newEmail);
 $dados->bindParam(":obs", $newObs);
 $dados->execute();
-header("Location: client.php");
+header("Location: ../client.php");

@@ -1,48 +1,36 @@
+function exibirAlerta(campo, mensagem) {
+    const alert = document.getElementById("alert-wrapper");
+    campo.focus();
+    alert.innerHTML = mensagem;
+    alert.classList.add("open");
+    setTimeout(() => {
+        alert.classList.remove("open");
+    }, 5000);
+    campo.style.outline = "2px solid red";
+}
+
 function validarDadosCliente() {
     form.name.style.outline = "";
     form.email.style.outline = "";
     form.obs.style.outline = "";
 
     if (form.name.value.length < 3 || form.name.value == "") {
-        var alert = document.getElementById("alert-wrapper");
-        form.name.focus()
-        alert.innerHTML = "Preencha o campo nome corretamente.\nVerifique se o nome possui mais de 3 caracteres.";
-        alert.classList.add("open");
-        setTimeout(() => {
-            alert.classList.remove("open")
-        }, 5000)
-        form.name.style.outline = "2px solid red";
-
+        exibirAlerta(form.name, "Preencha o campo nome corretamente.\nVerifique se o nome possui mais de 3 caracteres.");
         return false;
     }
 
     if (form.email.value.indexOf('@') == -1 || form.email.value.indexOf('.') == -1 || form.email.value == "") {
-        var alert = document.getElementById("alert-wrapper");
-        form.email.focus()
-        alert.innerHTML = "Preencha o campo email corretamente.\nVerifique se o seu email possui @ e o sufixo do email.";
-        alert.classList.add("open");
-        setTimeout(() => {
-            alert.classList.remove("open")
-        }, 5000)
-        form.email.style.outline = "2px solid red";
-        
+        exibirAlerta(form.email, "Preencha o campo email corretamente.\nVerifique se o seu email possui @ e o sufixo do email.");
         return false;
     }
 
-    if(form.obs.value.length > 1000){
-        var alert = document.getElementById("alert-wrapper");
-        form.obs.focus()
-        alert.innerHTML = `O campo observação excedeu o limite de caracteres (1000): ${form.obs.value.length}.`;
-        alert.classList.add("open");
-        setTimeout(() => {
-            alert.classList.remove("open")
-        }, 5000)
-        form.obs.style.outline = "2px solid red";
-        
-        return false
+    if (form.obs.value.length > 1000) {
+        exibirAlerta(form.obs, `O campo observação excedeu o limite de caracteres (1000): ${form.obs.value.length}.`);
+        return false;
     }
-}
 
+    return true;
+}
 function aplicarMascaraDolar(event) {
     let valor = event.target.value;
     
@@ -69,44 +57,26 @@ function limparValorEnviado(valorFormatado) {
     let valorLimpo = valorFormatado.replace(/[^0-9.]/g, '');
     return valorLimpo;
 }
-
 function validarDadosProduto(event) {
     form.name.style.outline = "";
     form.code.style.outline = "";
     form.stock.style.outline = "";
     form.price.style.outline = "";
 
-    // Limpar o valor de preço
     let valorFormatado = form.price.value;
-    form.price.value = limparValorEnviado(valorFormatado);
+    form.price.value = limparValorEnviado(valorFormatado); // Limpa o valor formatado
 
-    // Validação do nome
     if (form.name.value.length < 3 || form.name.value == "") {
-        var alert = document.getElementById("alert-wrapper");
-        form.name.focus();
-        alert.innerHTML = "Fill in the name field correctly.\nCheck if the name has more than 3 characters.";
-        alert.classList.add("open");
-        setTimeout(() => {
-            alert.classList.remove("open");
-        }, 5000);
-        form.name.style.outline = "2px solid red";
+        exibirAlerta(form.name, "Fill in the name field correctly.\nCheck if the name has more than 3 characters.");
         return false;
     }
 
-    // Validação do código de barras
     let codeNum = form.code.value;
     let codeBar = [];
-    let soma = 0; // Inicializando a soma
+    let soma = 0;
 
-    if (codeNum.length !== 13 || isNaN(codeNum)) {
-        var alert = document.getElementById("alert-wrapper");
-        form.code.focus();
-        alert.innerHTML = "Invalid barcode! Make sure it has 13 digits and only contains numbers.";
-        alert.classList.add("open");
-        setTimeout(() => {
-            alert.classList.remove("open");
-        }, 5000);
-        form.code.style.outline = "2px solid red";
+    if (codeNum.length !== 13) {
+        exibirAlerta(form.code, "Invalid barcode! Make sure it has 13 digits and only contains numbers.");
         return false;
     } else {
         for (let i = 0; i < 13; i++) {
@@ -120,7 +90,7 @@ function validarDadosProduto(event) {
         }
 
         if (soma % 10 !== 0) {
-            var alert = document.getElementById("alert-wrapper");
+            const alert = document.getElementById("alert-wrapper");
             alert.innerHTML = "Invalid barcode!";
             alert.classList.add("open");
             setTimeout(() => {
@@ -129,23 +99,12 @@ function validarDadosProduto(event) {
             form.code.style.outline = "2px solid red";
             return false;
         }
-
-        return true;
     }
 
-    // Validação do estoque
     if (form.stock.value == "" || isNaN(form.stock.value)) {
-        var alert = document.getElementById("alert-wrapper");
-        form.stock.focus();
-        alert.innerHTML = "Fill in the product stock field correctly.\nCheck if its content contains only numbers.";
-        alert.classList.add("open");
-        setTimeout(() => {
-            alert.classList.remove("open");
-        }, 5000);
-        form.stock.style.outline = "2px solid red";
+        exibirAlerta(form.stock, "Fill in the product stock field correctly.\nCheck if its content contains only numbers.");
         return false;
     }
 
-    // Impedindo o envio do formulário
-    event.preventDefault();
+    return true;
 }

@@ -1,21 +1,28 @@
+<?php
+   session_start();
+
+     if(!isset($_SESSION['nome']) and !isset($_SESSION['email']) and !isset($_SESSION['senha'])){
+       header('location: login.php');
+     }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/log.css">
-    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/log.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
     <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
     <title>Edit Client</title>
 </head>
 <body>
     <?php 
         if($_SERVER['REQUEST_METHOD'] != 'GET' || !isset($_GET["id"])){
-            header("Location: client.php");
+            header("Location: ../client.php");
         } 
         
-        include "conn.php";
+        include "../conn.php";
 
         $id = $_GET["id"];
         $stmt = $db->prepare("SELECT * FROM clientes WHERE id = :id");
@@ -27,7 +34,7 @@
         $email = $data['email'];
         $obs = $data['observacao'];
 
-        include_once "./assets/components/navbar.php"
+        include_once "../assets/components/navbarSub.php"
     ?>
     <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
     <p class="wrapper observation-wrapper" id="observation-wrapper"></p>

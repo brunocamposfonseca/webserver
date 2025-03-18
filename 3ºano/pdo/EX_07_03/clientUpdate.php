@@ -30,7 +30,7 @@
     ?>
     <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
     <p class="wrapper observation-wrapper" id="observation-wrapper"></p>
-    <form action="<?="clientUpdateQuery.php?id=$id"?>" method="post" name="form" onsubmit="return validarDadosCliente()">
+    <form action="<?="clientUpdateQuery.php?id=$id"?>" method="post" name="form">
         <h1>Edit</h1>
         <div class="input-fields">
             <input type="name" name="name" id="name" placeholder="" value="<?=$name?>" autofocus>

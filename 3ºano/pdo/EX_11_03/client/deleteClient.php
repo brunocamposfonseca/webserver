@@ -1,5 +1,5 @@
 <?php
-    include_once 'conn.php';
+    include_once '../conn.php';
 
     $id = $_GET['id'];
     $stmt = $db->prepare("DELETE FROM clientes WHERE id = :id");
@@ -8,9 +8,9 @@
 
     if($stmt->rowCount() > 0){
         echo "Deletou " . $stmt->rowCount()."linhas";
-        header("location: client.php");
+        header("location: ../client.php");
     } else {
         echo "Não deletou nenhuma linha...";
-        header("location: client.php");
+        header("location: ../client.php");
     }
 ?>

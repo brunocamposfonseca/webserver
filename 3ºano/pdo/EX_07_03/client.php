@@ -12,13 +12,17 @@
 </head>
 <body>
     <?php 
-        
-        
-        include_once "./assets/components/navbar.php"
+        include_once "./assets/components/navbar.php";
+        session_start();
     ?>
-    <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
-    <p class="wrapper observation-wrapper" id="observation-wrapper"></p>
-    <form action="insert.php" method="post" name="form" onsubmit="return validarDadosCliente()">
+    <ul class="ul-wrapper">
+        <li class="wrapper alert-wrapper <?= isset($_SESSION['erroNome']) ? 'open' : '';?>" id="alert-wrapper-name"><?= $_SESSION["erroNome"]; unset($_SESSION['erroNome']);?></li>
+        <li class="wrapper alert-wrapper <?= isset($_SESSION['erroEmail']) ? 'open' : '';?>" id="alert-wrapper-email"><?= $_SESSION["erroEmail"]; unset($_SESSION['erroEmail']);?></li>
+        <li class="wrapper alert-wrapper <?= isset($_SESSION['erroObservacao']) ? 'open' : '';?>" id="alert-wrapper-obs"><?= $_SESSION["erroObservacao"]; unset($_SESSION['erroObservacao'])?></li>
+    </ul>
+    
+
+    <form action="insert.php" method="post" name="form" onsubmit="return validarDadosCliente();">
         <h1>Register</h1>
         <div class="input-fields">
             <input type="name" name="name" id="name" placeholder="" autofocus>
@@ -32,19 +36,14 @@
             <textarea name="obs" id="obs" rows="4" placeholder=""></textarea>
             <label for="obs">Observation</label>
         </div>
-        <?php 
-            session_start();
-            if(isset($_SESSION['erro'])){
-                $erro = $_SESSION['erro'];
-                echo "<p style='color:red;'>$erro</p>";
-            }
-            unset($_SESSION['erro']);
-        ?>
         <button type="submit">Submit</button>
     </form>
     <div class="table-clientes" style="padding-block: 30px; display: flex; flex-direction: column; align-items: center; gap: 30px;">
         <h1>Customer Registration</h1>
-        <?php include "./assets/components/tableClients.php"?>
+        <?php 
+            session_destroy(); 
+            include "./assets/components/tableClients.php";
+        ?>
     </div>
 </body>
 <script src="./assets/js/script.js"></script>

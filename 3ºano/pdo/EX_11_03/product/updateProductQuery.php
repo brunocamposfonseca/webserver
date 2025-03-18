@@ -1,5 +1,5 @@
 <?php
-    include "conn.php";
+    include "../conn.php";
     $id = $_GET["id"];
     $newName = $_POST["name"];
     $newCode = $_POST["code"];
@@ -14,5 +14,5 @@
     $dados->bindParam(":preco", $newPrice);
 
     $dados->execute();
-    header("Location: product.php");
+    header("Location: ../product.php");
 ?>

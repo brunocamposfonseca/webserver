@@ -1,5 +1,5 @@
 <?php
-        include "conn.php";
+        include "./conn.php";
         $dados = $db->query("SELECT * FROM produtos");
         $dados->execute();
         $qnt = $dados->rowCount();

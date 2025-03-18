@@ -1,3 +1,11 @@
+<?php
+   session_start();
+
+     if(!isset($_SESSION['nome']) and !isset($_SESSION['email']) and !isset($_SESSION['senha'])){
+       header('location: login.php');
+     }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,27 +20,30 @@
 </head>
 <body>
     <?php 
-        include_once "./assets/components/navbar.php"
+        include_once "./assets/components/navbar.php";
     ?>
-    <p class="wrapper alert-wrapper" id="alert-wrapper"></p>
-    <p class="wrapper observation-wrapper" id="observation-wrapper"></p>
-    <form action="insertClient.php" method="post" name="form" onsubmit="return validarDadosCliente()">
+    <ul class="ul-wrapper">
+        <li class="wrapper alert-wrapper" id="alert-wrapper"></li>
+        <li class="wrapper alert-wrapper <?= isset($_SESSION['erroNome']) ? 'open' : '';?>" id="alert-wrapper-name"><?= $_SESSION["erroNome"]; unset($_SESSION['erroNome']);?></li>
+        <li class="wrapper alert-wrapper <?= isset($_SESSION['erroEmail']) ? 'open' : '';?>" id="alert-wrapper-email"><?= $_SESSION["erroEmail"]; unset($_SESSION['erroEmail']);?></li>
+        <li class="wrapper alert-wrapper <?= isset($_SESSION['erroObservacao']) ? 'open' : '';?>" id="alert-wrapper-obs"><?= $_SESSION["erroObservacao"]; unset($_SESSION['erroObservacao'])?></li>
+    </ul>
+    <form action="./client/insertClient.php" method="post" name="form" > <!--onsubmit="return validarDadosCliente()"-->
         <h1>Register Client</h1>
         <div class="input-fields">
-            <input type="text" name="name" id="name" placeholder="" autofocus>
+            <input type="text" name="name" id="name" placeholder="" autofocus value="<?=isset($_SESSION['valorNome'])? $_SESSION['valorNome'] : "" ?>">
             <label for="name">Name</label>
         </div>
         <div class="input-fields">
-            <input type="email" name="email" id="email" placeholder=""></input>
+            <input type="text" name="email" id="email" placeholder="" value="<?=isset($_SESSION['valorEmail'])? $_SESSION['valorEmail'] : "" ?>"></input>
             <label for="email">Email</label>
         </div>
         <div class="input-fields">
-            <textarea name="obs" id="obs" rows="4" placeholder=""></textarea>
+            <textarea name="obs" id="obs" rows="4" placeholder=""><?=isset($_SESSION['valorObservacao'])? $_SESSION['valorObservacao'] : "" ?></textarea>
             <label for="obs">Observation</label>
         </div>
 
         <?php
-            session_start();
             if(isset($_SESSION['erro'])){
                 $erro = $_SESSION['erro'];
                 echo "<p style='color:red;'>$erro</p>";
