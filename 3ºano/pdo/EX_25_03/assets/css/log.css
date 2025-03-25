@@ -127,7 +127,24 @@ a {
   transition: all 0.3s ease;
 }
 */
-button {
+
+.drop-logout{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #ce0000;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:not(.select-button, .drop-logout) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,7 +161,8 @@ button {
   transition:all 0.3s ease;
 }
 
-button:hover {
+
+button:not(.select-button):hover{
   padding: 10px 8px;
   width: 100%;
   display: block;
@@ -155,6 +173,12 @@ button:hover {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.select-button{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .msg-container {

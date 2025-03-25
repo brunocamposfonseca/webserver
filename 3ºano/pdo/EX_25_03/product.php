@@ -50,7 +50,7 @@
         </div>
         <button type="submit">Submit</button>
     </form>
-    <div class="table-clientes" style="padding-block: 30px; display: flex; flex-direction: column; align-items: center; gap: 30px;">
+    <div class="table-products">
         <h1>Customer Registration</h1>
         <?php include "./assets/components/tableProducts.php"?>
     </div>
