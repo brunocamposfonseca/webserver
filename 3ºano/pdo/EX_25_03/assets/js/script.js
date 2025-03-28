@@ -75,13 +75,24 @@ function validarDadosProduto() {
     let codeBar = [];
     let soma = 0;
 
-    if (codeNum.length !== 13) {
-        exibirAlerta(form.code, "Invalid barcode! Make sure it has 13 digits and only contains numbers.");
-        return false;
-    } else {
+    if (codeNum.length === 12) { 
+        for (let i = 0; i < 12; i++) {
+            let newIndex = Number(codeNum[i]);
+            if (i % 2 === 0) {
+                codeBar.push(newIndex * 3);
+            } else {
+                codeBar.push(newIndex);
+            }
+            soma += codeBar[i];
+        }
+        if (soma % 10 !== 0) {
+            exibirAlerta(form.code, "Invalid UPC-A barcode!");
+            return false;
+        }
+    } else if (codeNum.length === 13) {
         for (let i = 0; i < 13; i++) {
             let newIndex = Number(codeNum[i]);
-            if (i % 2 == 0) {
+            if (i % 2 === 0) {
                 codeBar.push(newIndex);
             } else {
                 codeBar.push(newIndex * 3);
@@ -90,15 +101,13 @@ function validarDadosProduto() {
         }
 
         if (soma % 10 !== 0) {
-            const alert = document.getElementById("alert-wrapper");
-            alert.innerHTML = "Invalid barcode!";
-            alert.classList.add("open");
-            setTimeout(() => {
-                alert.classList.remove("open");
-            }, 5000);
-            form.code.style.outline = "2px solid red";
+            exibirAlerta(form.code, "Invalid EAN-13 barcode!");
             return false;
         }
+
+    } else {
+        exibirAlerta(form.code, "Invalid barcode! Make sure it has 12 (UPC-A) or 13 (EAN-13) digits and only contains numbers.");
+        return false;
     }
 
     if (form.stock.value == "" || isNaN(form.stock.value)) {

@@ -144,7 +144,7 @@ a {
   transition: all 0.3s ease;
 }
 
-button:not(.select-button, .drop-logout) {
+button:not(.select-button, .drop-logout, .btn-plus-product, .btn-minus-product, .btn-exclude-product) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +162,7 @@ button:not(.select-button, .drop-logout) {
 }
 
 
-button:not(.select-button):hover{
+button:not(.select-button, .btn-plus-product, .btn-minus-product, .btn-exclude-product, .btn-submit-cart):hover{
   padding: 10px 8px;
   width: 100%;
   display: block;

@@ -30,23 +30,24 @@
             }
         }
 
-        if (empty($codebar) ) {
+        if (empty($codebar)) {
             $erroCode = "O Código de Barras é obrigatório";
         } else {
             $codebar = limpaEntrada($codebar);
-            if (strlen($codebar) != 13) {
+            
+            if (strlen($codebar) != 12 && strlen($codebar) != 13) {
                 $erroCode = "Formato de Código de Barras inválido";
-            }else{
-                $oi = array(1,0,1,0,1,0,1,0,1,0,1,0,4);
+            } else {
+                if (strlen($codebar) == 12) {
+                    $codebar = '0' . $codebar;
+                }
+                $oi = array(1, 3);
                 $soma = 0;
-                for($i=0; $i <13; $i++){
-                    if($i%2 == 0){
-                        $soma += $oi[$i];
-                    }else{
-                        $soma +=$oi[$i];
-                    }
-                } 
-                if($soma%10 != 0){
+                for ($i = 0; $i < 13; $i++) {
+                    $soma += (int)$codebar[$i] * $oi[$i % 2];
+                }
+                
+                if ($soma % 10 != 0) {
                     $erroCode = "Código de Barras está no formato errado";
                 }
             }

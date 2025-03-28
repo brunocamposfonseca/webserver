@@ -55,5 +55,5 @@
         <button type="submit">Submit</button>
     </form>
 </body>
-<script src="./assets/js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 </html>

@@ -30,12 +30,7 @@ if (!isset($_SESSION['nome']) and !isset($_SESSION['email']) and !isset($_SESSIO
     <div>
         <h1>Shopping Cart</h1>
     </div>
-    <div class="cart" id="cart">
-        <p id="client-data" style="margin-top: 10px;">
-            Client:
-        </p>
-    </div>
-
+    <div class="cart" id="cart"></div>
     <div style="display: flex; gap: 15px;">
         <div class="table-clientes" style="padding-block: 30px; display: flex; flex-direction: column; align-items: center; gap: 30px;">
             <h2>Select a client</h2>

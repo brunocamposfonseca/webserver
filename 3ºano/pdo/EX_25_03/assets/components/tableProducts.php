@@ -18,7 +18,7 @@
 
             echo "<tr>";
             if($url == "sales"){
-                echo "<td><button class='select-button' onclick=\"selectProduct($id, '$code', '$nome', '$precos')\"><i class='fa fa-solid fa-circle-check'></i></button></td>";
+                echo "<td><button class='select-button' onclick=\"selectProduct($id, '$code', '$nome', '$precos', '$estoque')\"><i class='fa fa-solid fa-circle-check'></i></button></td>";
             }
             echo "<td>$nome</td>";
             echo "<td>$code</td>";
