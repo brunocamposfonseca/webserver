@@ -153,6 +153,15 @@ td {
     max-width: 300px;
 }
 
+td > ul {
+    display: block;
+}
+
+td > ul > li{
+    text-decoration: dotted;
+    display: block;
+}
+
 tr:nth-child(even) {
     background-color: #f2f2f2;
     border-radius: 10px;

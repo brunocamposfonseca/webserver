@@ -22,8 +22,8 @@
     <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
     <title>Login - Admin</title>
 </head>
-<body>
-<form action="login.php" method="post" name="form" >
+<body class="container">
+    <form action="login.php" method="post" name="form" >
         <h1>Login</h1>
         <ul>
             <li class="wrapper alert-wrapper" id="alert-wrapper"></li>

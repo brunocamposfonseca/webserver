@@ -22,7 +22,7 @@
     <script src="https://kit.fontawesome.com/a42e32da7f.js" crossorigin="anonymous"></script>
     <title>Signup - Restrited</title>
 </head>
-<body>
+<body class="container">
 <form action="./insertSignup.php" method="post" name="form">
         <h1>Create User</h1>
         <div class="input-fields">

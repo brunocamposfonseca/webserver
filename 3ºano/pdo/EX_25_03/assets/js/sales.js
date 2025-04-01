@@ -66,7 +66,12 @@ function productQuant(id, quant) {
     if (product[id].quantity + quant >= 1) {
         if (product[id].quantity + quant <= product[id].stock) {
             product[id].quantity += quant;
-            product[id].totalPrice += product[id].price
+            if(quant == 1){
+                product[id].totalPrice += product[id].price
+            } else {
+                product[id].totalPrice -= product[id].price
+            }
+            
             updateProduct()
         } else {
             alert = "The selected quantity exceeded the stock limit."
@@ -227,7 +232,6 @@ function updateCart() {
         updateProduct();
     }
 }
-
 
 async function submitSale(){
     try{

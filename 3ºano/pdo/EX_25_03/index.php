@@ -52,6 +52,17 @@
                     echo "<span>".$data."</span>";
                 ?>
             </div>
+            <div class="card-dashboard">
+                <p>Number of registered sales:</p>
+                <?php
+                    include "conn.php";
+                    $query = $db->query("SELECT * from produtos");
+                    $query->execute();
+                    $data = $query->rowCount();
+                    
+                    echo "<span>".$data."</span>";
+                ?>
+            </div>
         </div>
     </section>
 </body>
