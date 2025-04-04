@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include "../conn.php";
     $id = $_GET["id"];
     $newName = $_POST["name"];
@@ -14,5 +16,11 @@
     $dados->bindParam(":preco", $newPrice);
 
     $dados->execute();
-    header("Location: ../product.php");
+
+    if($_SESSION['qualquerUm'] == 4){
+        header("Location: ../createSales.php");
+    }else{
+        header("Location: ../product.php");
+    }
+
 ?>

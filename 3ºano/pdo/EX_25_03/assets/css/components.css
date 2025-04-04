@@ -210,7 +210,8 @@ th {
 }
 
 .table-clients,
-.table-products{
+.table-products,
+.table-sales{
     padding-block: 30px; 
     display: flex; 
     flex-direction: column;

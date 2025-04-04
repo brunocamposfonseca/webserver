@@ -1,9 +1,9 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['nome']) and !isset($_SESSION['email']) and !isset($_SESSION['senha'])) {
-    header('location: login.php');
-}
+    session_start();
+    $_SESSION['qualquerUm'] = 4;
+    if (!isset($_SESSION['nome']) and !isset($_SESSION['email']) and !isset($_SESSION['senha'])) {
+        header('location: login.php');
+    }
 ?>
 
 <!DOCTYPE html>
