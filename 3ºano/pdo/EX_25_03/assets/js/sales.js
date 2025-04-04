@@ -240,7 +240,8 @@ async function submitSale(){
                 idClient : client['id'],
                 nameClient : client['name']
             },
-            product: Object.values(product)
+            product: Object.values(product),
+            totalPrice: totalValueCart
         }
         console.log(datas)
         let response = await fetch("./sales/insertSales.php", {
