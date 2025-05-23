@@ -19,28 +19,9 @@
                         }
                     ?></li>
                     <li><span>Date time: </span><?php
-                        $time = $dataVenda;
-                        $time = str_replace('-','/',$time);
-                        $hour = substr($time,10, (18-10+1));
-                        $time = substr($time,5,(7 - 5 + 1)) . substr($time,8,(9-8+1)) . $time[4] . substr($time, 0, (3-0+1));
-                        $min = $hour[3] . $hour[4] . $hour[5];
-                        $hour = intval($hour[1] . $hour[2]);
-                        if($hour < 12){
-                            if($hour == 00){
-                                $hour = 12;
-                                $hour = "$hour$min AM";
-                            }else{
-                                $hour = "$hour$min AM";
-                            } 
-                        }else{
-                            if($hour > 12 && $hour != 0){
-                                $hour = $hour - 12;
-                                $hour = "$hour$min PM";
-                            }
-                        }
-                        
-                        echo $time . " - ";
-                        echo $hour;
+                        $time = new DateTime($dataVenda);
+                        echo $time->format('m/d/Y - H:i A');
+                    
                     ?></li>
                 </ul>
             </div>
@@ -70,7 +51,7 @@
                                 ?>
                                 <td><?= $dataProd["code"]?></td>
                                 <td><?= $dataProd["nome"]?></td>
-                                <td><?= $preco?></td>
+                                <td><?= number_format($precos, 2, '.', ',')?></td>
                                 <td><?= $quantidade?></td>
                             </tr>
                         <?php endforeach; ?>

@@ -1,0 +1,258 @@
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #660080;
+}
+
+.link-usuario{
+    float: right;
+}
+
+/* ----- Estilo de Tabela -----*/
+
+table {
+  border-collapse: collapse;
+  background-color: white;
+  text-align: left;
+}
+th {
+    background-color: #660080;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+tr:nth-child(even) {
+    background-color: #8c28a575;
+}
+
+/* ------ Estilo Botão ----- */
+
+.playstore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.625rem 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    transition: all  .2s ease;
+    text-decoration: none;
+  }
+  
+  .playstore-button:hover {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .texts {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+  }
+  
+  .text-1 {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  .text-2 {
+    font-weight: 600;
+  }
+  
+/* ------- Estilo para Formulários --------- */
+
+.container {
+    margin: 0 auto;
+    width: 600px;
+}
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px 30px 30px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form{
+    width: 100%;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input, textarea {
+    width: 100%;
+    padding: 8px 0px 8px 0px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type=submit] {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #660080;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input:hover[type=submit] {
+    background-color: #660080;
+}
+
+/* Mensagens de erro */
+.erro-input {
+    color: red;
+    font-size: 15px;
+}
+
+.div-photo{
+    padding-right: 20px;
+}
+
+.photo-user{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.div-photo p{
+    color: #666;
+    text-align: center;
+}
+
+.btn-edit{
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border: 1px solid #660080;
+    background-color: white;
+    color: #660080;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.div-btn-edit{
+    margin: 0 auto;
+
+    width: 60%;
+}
+
+.btn-edit:hover{
+    background-color: #660080;
+    color: #fff;
+}
+
+.photo-product{
+    height: 200px;
+    width: 200px;
+}
+
+.div-product{
+  padding: 20px;
+}
+
+.button-edit{
+  margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border: 1px solid #660080;
+    background-color: white;
+    color: #660080;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-edit:hover{
+  background-color: #660080;
+  color: #fff;
+}
+
+
+.btn-cadastro{
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border: 1px solid #660080;
+  background-color: white;
+  color: #660080;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cadastro:hover{
+  background-color: #660080;
+  color: #fff;
+}
+
+.botao-cadastro{
+  margin: 0 auto;
+
+  width: 60%;
+}
+
